@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/main.css" rel="stylesheet">
+  <title>이너프샐러드 재고확인</title>
+</head>
+<body>
+  <div class="page-head">
+    <div class="btn"></div>
+    <p class="page-name" id="vegetable-page">매일 재고 확인</p>
+  </div>
+
+
+<!-- menu button -->
+  <div onclick="history.back();" class="page_cover"></div>
+  <div id="menu">
+    <div onclick="history.back();" class="close"></div>
+    <div id="menu-time">
+      <p>김정건님 환영합니다</p>
+      <p id="nowdate"></p>
+      <p id="getday"></p>
+    </div>
+    <ul>
+      <li id="vegetable"><button type="button" id="vegetable-btn" onclick="location.href='main.html';">야채</button></li>
+      <li id="everyday"><button type="button" id="everyday-btn" onclick="location.href='everyday.html';">매일 확인</button></li>
+      <li id="monwedfri"><button type="button" id="monwedfri-btn">월수금 확인</button><li>
+      <button class="finish-btn" type="button">재고 확인 완료</button>
+    </ul>
+  </div>
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+  <script>
+    $(".btn").click(function() {
+      $("#menu,.page_cover,html").addClass("open");
+      window.location.hash = "#open";
+    });
+
+    window.onhashchange = function() {
+      if (location.hash != "#open") {
+        $("#menu,.page_cover,html").removeClass("open");
+      }
+    };
+  </script>
+  <script type="text/javascript" src="js/main.js"></script> 
+</body>
+</html>
